@@ -16,8 +16,13 @@ jobs:
         with:
           flutter-version: "3.32.0"
 
-      - name: Install Dependencies
-        run: flutter pub get
+      - name: Show pubspec.yaml
+  run: |
+    echo "===== pubspec.yaml ====="
+    cat pubspec.yaml
+
+- name: Install Dependencies
+  run: flutter pub get
 
       - name: Analyze Project
         run: flutter analyze

@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class AppTheme {
-  static const Color primaryColor = Color(0xFF6C63FF);
-  static const Color secondaryColor = Color(0xFF03DAC6);
-  static const Color backgroundColor = Color(0xFFF2F2F7);
-  static const Color surfaceColor = Colors.white;
-  static const Color errorColor = Color(0xFFB00020);
+  static const Color primaryColor = Color(0xFFB65A1A);
+static const Color secondaryColor = Color(0xFFD97706);
+static const Color backgroundColor = Color(0xFFFFF8EE);
+static const Color surfaceColor = Color(0xFFFFFFFF);
+static const Color errorColor = Color(0xFFD32F2F);
 
- static final TextTheme textTheme = GoogleFonts.ibmPlexSansTextTheme().copyWith(
-  bodyLarge: GoogleFonts.ibmPlexSans(
+ static final TextTheme textTheme = GoogleFonts.poppinsTextTheme().copyWith(
+  bodyLarge: GoogleFonts.poppins(
     fontSize: 15,
     fontWeight: FontWeight.w500,
     color: Colors.black,

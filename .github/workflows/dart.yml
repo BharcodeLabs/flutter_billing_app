@@ -11,20 +11,29 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
+      - name: Show Repository Files
+        run: |
+          echo "===== CURRENT DIRECTORY ====="
+          pwd
+          echo ""
+          echo "===== FILES ====="
+          ls -la
+          echo ""
+          echo "===== PUBSPEC.YAML ====="
+          cat pubspec.yaml
+
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
         with:
           flutter-version: "3.32.0"
 
-      - name: Show pubspec.yaml
-  run: |
-    echo "===== pubspec.yaml ====="
-    cat pubspec.yaml
+      - name: Flutter Doctor
+        run: flutter doctor -v
 
-- name: Install Dependencies
-  run: flutter pub get
+      - name: Flutter Pub Get
+        run: flutter pub get
 
-      - name: Analyze Project
+      - name: Flutter Analyze
         run: flutter analyze
         continue-on-error: true
 
@@ -32,6 +41,7 @@ jobs:
         run: flutter build apk --release
 
       - name: Upload APK
+        if: success()
         uses: actions/upload-artifact@v4
         with:
           name: Lekhveda-Offline-Billing-APK
